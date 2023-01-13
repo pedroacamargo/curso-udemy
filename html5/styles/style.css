@@ -1,0 +1,11 @@
+header {
+    border: 1px solid black;
+    background-color: #f2f2f2;
+}
+
+.exemplo {
+    order: 1; /* O order é para trocar a ordem dos itens flex no flexbox. */
+    flex-grow: 1; /* Flex grow é o flex (espaçamento do item dentro do container) */
+    flex-shrink: 2; /* Capacidade de redução de tamanho do item */
+    flex-basis: auto;
+}
