@@ -1,0 +1,8 @@
+let a = document.getElementById("nome_usuario")
+let b = document.getElementsByTagName("input")
+let c = document.getElementsByClassName("campo_texto")
+let d = document.getElementsByName("nome")
+console.log(a)
+console.log(b)
+console.log(c)
+console.log(d)
