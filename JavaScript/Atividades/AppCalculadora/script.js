@@ -5,13 +5,23 @@ function calcular(tipo, valor) {
         if (result.value === "" && valor != "c") {
             result.value = "Escolha um valor válido"
         } else {
-
+            switch(valor) {
+                case 'c':
+                    result.value = ""
+                    break
+                case '=':
+                    result.value = eval(result.value)
+                    break
+                default:
+                    result.value += valor
+            }
         }
 
     } else if (tipo == "valor") {
         
         if (result.value === "Escolha um valor válido") {
             switch (valor) {
+                case 0:
                 case 1:
                 case 2:
                 case 3:
