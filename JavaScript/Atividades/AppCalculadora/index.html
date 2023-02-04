@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora</title>
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  </head>
+  <body style="background-color: #d9d9d9;" class="d-flex align-items-center justify-content-center">
+    
+    <!-- Calculadora container -->
+    <div class="calculadora bg-dark rounded d-flex flex-column justify-content-center align-items-center">
+        <!-- Lugar dos resultados -->
+        <input id="resultados" class="digitos text-end bg-light mx-auto border border-dark rounded form-control w-75" disabled placeholder="0">
+
+        </input>
+
+        <!-- 5X3 -->
+        <div class="w-100 d-flex justify-content-center">
+            <button onclick="calcular('acao', 'c')" type="button" class="mx-1 tecla btn btn-dark clear">C</button>
+            <button onclick="calcular('acao', '/')" type="button" class="mx-1 tecla btn btn-dark">/</button>
+            <button onclick="calcular('acao', '*')"onclick="calcular('acao', '*')" type="button" class="mx-1 tecla btn btn-dark">X</button>
+        </div>
+        <div class="w-100 d-flex justify-content-center">
+            <button onclick="calcular('valor', 7)" type="button" class="mx-1 tecla btn btn-dark">7</button>
+            <button onclick="calcular('valor', 8)" type="button" class="mx-1 tecla btn btn-dark">8</button>
+            <button onclick="calcular('valor', 9)" type="button" class="mx-1 tecla btn btn-dark">9</button>
+            <button onclick="calcular('acao', '-')" type="button" class="mx-1 tecla btn btn-dark">-</button>
+        </div>
+        <div class="w-100 d-flex justify-content-center">
+            <button onclick="calcular('valor', 4)" type="button" class="mx-1 tecla btn btn-dark">4</button>
+            <button onclick="calcular('valor', 5)" type="button" class="mx-1 tecla btn btn-dark">5</button>
+            <button onclick="calcular('valor', 6)" type="button" class="mx-1 tecla btn btn-dark">6</button>
+            <button onclick="calcular('acao', '+')" type="button" class="mx-1 tecla btn btn-dark">+</button>
+        </div>
+        <div class="w-100 d-flex justify-content-center">
+            <div class="setup">
+                <div class="flex-wrap setup2 d-flex justify-content-start">
+                    <button onclick="calcular('valor', 1)" type="button" class="mx-1 tecla btn btn-dark">1</button>
+                    <button onclick="calcular('valor', 2)" type="button" class="mx-1 tecla btn btn-dark">2</button>
+                    <button onclick="calcular('valor', 3)" type="button" class="mx-1 tecla btn btn-dark">3</button>
+                    <button onclick="calcular('valor', 0)" type="button" class="mx-1 tecla btn btn-dark zero">0</button>
+                    <button onclick="calcular('acao', '.')" type="button" class="mx-1 tecla btn btn-dark">.</button>
+                </div>
+            </div>
+            <button onclick="calcular('acao', '=')" style="margin-left: -5px;" type="button" class="tecla btn btn-dark enter">=</button>
+        </div>
+        <div class="w-100">
+            
+        </div>
+
+            
+    </div>  
+
+
+    <!-- Script Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
