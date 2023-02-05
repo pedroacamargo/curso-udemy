@@ -12,3 +12,8 @@ while (y < lista_frutas.length) {
     document.write(lista_frutas[y] + "<br>")
     y++
 }
+document.write("<hr>")
+
+for (let i = 0; i < lista_frutas.length;i++) {
+    document.write(lista_frutas[i] + "<br>")
+}
