@@ -9,6 +9,29 @@ class Despesa {
     }
 }
 
+class Bd {
+
+    constructor() {
+        let id = localStorage.getItem('id')
+
+        if (id === null) {
+            localStorage.setItem('id',0)
+        }
+    }
+
+    getProximoId() {
+        let proximoId = localStorage.getItem('id')
+        return parseInt(proximoId) + 1 
+    }
+
+    gravar(d) {
+        let id = this.getProximoId()
+        localStorage.setItem(id, JSON.stringify(d))
+        localStorage.setItem('id', id)
+    }
+}
+
+let bd = new Bd()
 
 function cadastrarDespesa() {
     let ano = document.getElementById("ano")
@@ -29,5 +52,21 @@ function cadastrarDespesa() {
     )
 
 
-    console.log(despesa)
+    bd.gravar(despesa)
 }
+
+
+
+
+
+
+
+
+
+
+// ------ ANOTAÇÕES ---------
+
+
+// JSON.stringfy(objeto) -> transforma o objeto em uma string JSON
+
+// JSON.parse(JSON) -> transforma a string JSON em um objeto
