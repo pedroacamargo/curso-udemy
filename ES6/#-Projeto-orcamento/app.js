@@ -3,6 +3,10 @@ const modalLabel = document.getElementById("modalLabel")
 const modalMsg = document.getElementById("modalMsg")
 const modalBtn = document.getElementById("modal-btn")
 
+let okBtn = () => {
+    window.location.reload()
+}
+
 class Despesa {
     constructor(ano, mes, dia, tipo, descricao, valor) {
         this.ano = ano
@@ -10,7 +14,7 @@ class Despesa {
         this.dia = dia
         this.tipo = tipo
         this.descricao = descricao
-        this.valor = valor
+        this.valor = Number(valor.replace(',','.')).toFixed(2)
     }
 
     validarDados() {
@@ -18,6 +22,8 @@ class Despesa {
             if (this[i] == undefined || this[i] == '' || this[i] == null) {
                 return false
             }
+
+            console.log(this[i][i])
         } 
         return true
     }
@@ -202,13 +208,16 @@ function carregaListaDespesas(desp = [], filter = false) {
         btn.id = `id_despesa_${d.id}`
         btn.onclick = function() {
             // remover a despesa
-
             let id = this.id.replace('id_despesa_', '')
             
 
             bd.remover(id)
-
-            window.location.reload()
+            
+            $('#modalRegistaDespesa').modal('show')
+            modalLabel.style.color = "green"
+            modalLabel.innerHTML = "Despesa excluída"
+            modalMsg.innerHTML = "Sua despesa foi excluída permanentemente."
+            modalBtn.style.backgroundColor = "green"
         }
         linha.insertCell(4).append(btn)
     })
@@ -228,6 +237,9 @@ function pesquisarDespesa() {
 
     carregaListaDespesas(despesas, true)
 }
+
+
+
 
 
 
